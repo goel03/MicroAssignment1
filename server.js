@@ -1,7 +1,7 @@
-// const dotenv = require("dotenv");  //for env file
-// dotenv.config(); 
+const dotenv = require("dotenv");  //for env file
+dotenv.config(); 
 
-
+const initializeDatabase = require("./config/db");
 const express = require("express");
 
 
@@ -9,6 +9,17 @@ const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+initializeDatabase();
+
+app.get("/api/health", (req, res) => {
+    res.send({
+        time: new Date(),
+        server: "Shuffle Backend",
+        status: "Active",
+    });
+});
+
 
 
 
