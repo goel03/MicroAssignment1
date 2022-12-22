@@ -3,6 +3,7 @@ dotenv.config();
 
 const initializeDatabase = require("./config/db");
 const express = require("express");
+const discover = require("./routes/discover");
 
 const admin = require("./routes/admin");
 const app = express();
