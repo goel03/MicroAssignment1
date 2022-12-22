@@ -1,0 +1,14 @@
+const { Router } = require("express");
+const route = Router();
+const CategoryModel = require("../models/category");
+const GalleryModel = require("../models/gallery");
+
+
+
+
+
+
+module.exports = route;
+
+
+
